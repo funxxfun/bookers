@@ -1,3 +1,12 @@
+<div class="form-eroor">
+ <% if @book.errors.any? %>
+  <% @book.errors.full_messages.each do |message| %>
+   <%= message %></br>
+  <% end %>
+ <% end %>
+</div>
+
+
 <h1>Editing Book</h1>
 <%= form_with model:@book, url:"/books/#{@book.id}",local:true do |f| %>
 <div class="title">
@@ -9,7 +18,7 @@
  <%= f.text_area:body %>
 </div>
 <div class="tag">
-<%= f.submit 'Update Book',"data-confirm" => "Book was successfully update." %>
+<%= f.submit 'Update Book' %>
   
 </div>
 
