@@ -28,8 +28,11 @@
  <% end %>
 </table>
 
-<div class="form-eroor">
+<div class="form-error">
  <% if @book.errors.any? %>
+  <div class="error-message">
+  <%= "errors prohibited this book from being saved" %></br>
+  </div>
   <% @book.errors.full_messages.each do |message| %>
    <%= message %></br>
   <% end %>
